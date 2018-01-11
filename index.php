@@ -47,6 +47,42 @@ include('database_inc.php');
 
      ?>
 
+<div class="row">
+    <div class="col-12">
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>User name</td>
+                <td>Screen name</td>
+                <td>Password</td>
+                <td>Action</td>
+            </tr>
+            <?php
+        $result = mysqli_query($connect,
+            "SELECT * FROM users;");
+
+        while ($row = mysqli_fetch_array($result))
+
+        {
+            echo
+                '<tr>
+                  <td>' . $row['id'] . '</td>' .
+                  '<td>' . $row['username'] . '</td>' .
+                  '<td>' . $row['screenname'] . '</td>' .
+                   '<td>' . $row['password'] . '</td>' .
+                   '<td>  <a href="user_edit?id='.$row['id'].'">Edit</a></td>' .
+                '</tr>';
+
+        }
+
+        ?>
+        </table>
+    </div>
+</div>
+
+
+
+
      <div class="row">
          <div class="col-12 p-3">
 
@@ -78,7 +114,6 @@ include('database_inc.php');
         <p>
             <button type="submit">Click to create new user</button>
         </p>
-
 
     </form>
          </div>
