@@ -19,6 +19,6 @@ echo "<p>comment is $comments</p>";
 $result = mysqli_query($connect,
     "INSERT INTO `users` 
     (`id`, `username`, `password`, `screenname`, `datejoined`, `remember`, `comments`) 
-    VALUES (NULL, '$email', '$password', '$screenname', '2018-01-09', '0', '$comments');");
+    VALUES (NULL, '$username', '$password', '$screenname', '2018-01-09', '0', '$comments');");
 
 ?>
