@@ -48,7 +48,7 @@ include('database_inc.php');
      ?>
 
 <div class="row">
-    <div class="col-12">
+    <div class="col- m-2 p-2">
         <table border="1">
             <tr>
                 <td>ID</td>
