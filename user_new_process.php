@@ -21,4 +21,6 @@ $result = mysqli_query($connect,
     (`id`, `username`, `password`, `screenname`, `datejoined`, `remember`, `comments`) 
     VALUES (NULL, '$username', '$password', '$screenname', '2018-01-09', '0', '$comments');");
 
+header('location:index.php');
+
 ?>
