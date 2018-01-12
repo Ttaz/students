@@ -82,23 +82,23 @@ include('database_inc.php');
 
                     <div class="form-group">
                         <label for="username">Username: </label>
-                        <input id="username" type="text" name="username" placeholder="Please type new username here">
+                        <input class="form-control" id="username" type="text" name="username" placeholder="Please type new username here">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password: </label>
-                        <input id ="password" type="text" name="password" placeholder="Please type new password here">
+                        <input class="form-control" id ="password" type="text" name="password" placeholder="Please type new password here">
                     </div>
 
 
                     <div class="form-group">
                         <label for="screenname">Screen name or display name: </label>
-                        <input id ="screenname" type="text" name="screenname" placeholder="Please type new screen name here">
+                        <input class="form-control" id ="screenname" type="text" name="screenname" placeholder="Please type new screen name here">
                     </div>
 
                     <div class="form-group">
                         <label for="comments">Comments: </label>
-                        <textarea id="comments" name="comments" placeholder="Please type comments here"></textarea>
+                        <textarea class="form-control" id="comments" name="comments" placeholder="Please type comments here"></textarea>
 
                     </div>
 
