@@ -35,6 +35,7 @@ session_start();
 include('header.php');
 include('database_inc.php');
 $id_to_edit = $_GET['id'];
+$_SESSION['id_to_edit'] = $id_to_edit;
 ?>
 
 <div class="container">
@@ -95,7 +96,7 @@ $id_to_edit = $_GET['id'];
         </div> ';
 
 
-        
+
 
     }
     ?>
