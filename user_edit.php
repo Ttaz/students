@@ -74,19 +74,29 @@ $id_to_edit = $_GET['id'];
 
 
 
-
-        <div class="row">
-            <div class="col-12 p-3">
-
-
-            </div>
-        </div>
-
         <?php
         echo "You are logged in with email: $email ";
         echo "<p> <a href=\"users.php\">Click here for users</a></p>";
     } else {
-        echo "Hello. You are not logged in.";
+
+
+          // This block is true if there is no logged_in session
+        echo '
+
+        <div class="row">
+            <div class="col-12 m-3 p-3">
+                <div class="alert alert-warning fade show" role="alert">
+                    <strong>Please login! </strong> <br /><br />
+                    <a href="login.php">Click here to login.</a> You will be able to use interactive features of this site.
+
+                    </button>
+                </div>
+            </div>
+        </div> ';
+
+
+        
+
     }
     ?>
     <!-- rows, columns, card, and your web app go here!!! -->
