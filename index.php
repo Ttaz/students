@@ -64,7 +64,9 @@ include('database_inc.php');
                             '<td>' . $row['username'] . '</td>' .
                             '<td>' . $row['screenname'] . '</td>' .
                             '<td>' . $row['password'] . '</td>' .
-                            '<td>  <a href="user_edit.php?id='.$row['id'].'">Edit</a></td>' .
+                            '<td>   <a href="user_edit.php?id='.$row['id'].'">Edit</a> | 
+                                    <a href="user_delete.php?id='.$row['id'].'">Delete</a>
+                              </td>' .
                             '</tr>';
                     }
                     ?>
@@ -112,7 +114,7 @@ include('database_inc.php');
 
         <?php
         echo "You are logged in with email: $email ";
-        echo "<p> <a href=\"users.php\">Click here for users</a></p>";
+
     } else {
 
         // This block is true if there is no logged_in session
