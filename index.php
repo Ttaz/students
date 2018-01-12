@@ -32,109 +32,114 @@ session_start();
 
 <!-- Fixed navbar -->
 <?php
-
 include('header.php');
 include('database_inc.php');
-
 ?>
 
 <div class="container">
-<?php
+    <?php
     $logged_in = $_SESSION['logged_in'];
     $email = $_SESSION['email'];
-
     if($logged_in) {
-
-     ?>
-
-<div class="row">
-    <div class="col- m-2 p-2">
-        <table border="1">
-            <tr>
-                <td>ID</td>
-                <td>User name</td>
-                <td>Screen name</td>
-                <td>Password</td>
-                <td>Action</td>
-            </tr>
-            <?php
-        $result = mysqli_query($connect,
-            "SELECT * FROM users;");
-
-        while ($row = mysqli_fetch_array($result))
-
-        {
-            echo
-                '<tr>
-                  <td>' . $row['id'] . '</td>' .
-                  '<td>' . $row['username'] . '</td>' .
-                  '<td>' . $row['screenname'] . '</td>' .
-                   '<td>' . $row['password'] . '</td>' .
-                   '<td>  <a href="user_edit?id='.$row['id'].'">Edit</a></td>' .
-                '</tr>';
-
-        }
-
         ?>
-        </table>
-    </div>
-</div>
+
+        <div class="row">
+            <div class="col- m-2 p-2">
+                <table border="1">
+                    <tr>
+                        <td>ID</td>
+                        <td>User name</td>
+                        <td>Screen name</td>
+                        <td>Password</td>
+                        <td>Action</td>
+                    </tr>
+                    <?php
+                    $result = mysqli_query($connect,
+                        "SELECT * FROM users;");
+                    while ($row = mysqli_fetch_array($result))
+                    {
+                        echo
+                            '<tr>
+                  <td>' . $row['id'] . '</td>' .
+                            '<td>' . $row['username'] . '</td>' .
+                            '<td>' . $row['screenname'] . '</td>' .
+                            '<td>' . $row['password'] . '</td>' .
+                            '<td>  <a href="user_edit.php?id='.$row['id'].'">Edit</a></td>' .
+                            '</tr>';
+                    }
+                    ?>
+                </table>
+            </div>
+        </div>
 
 
 
 
-     <div class="row">
-         <div class="col-12 p-3">
+        <div class="row">
+            <div class="col-12 p-3">
 
-    <form action="user_new_process.php" method="post">
+                <form action="user_new_process.php" method="post">
 
-        <p>
-        <label for="username">Username: </label>
-        <input id="username" type="text" name="username" placeholder="Please type new username here">
-        </p>
+                    <div class="form-group">
+                        <label for="username">Username: </label>
+                        <input id="username" type="text" name="username" placeholder="Please type new username here">
+                    </div>
 
-
-        <p>
-            <label for="password">Password: </label>
-            <input id ="password" type="text" name="password" placeholder="Please type new password here">
-        </p>
-
-
-        <p>
-            <label for="screenname">Screen name or display name: </label>
-            <input id ="screenname" type="text" name="screenname" placeholder="Please type new screen name here">
-        </p>
-
-        <p>
-            <label for="comments">Comments: </label>
-            <textarea id="comments" name="comments" placeholder="Please type comments here"></textarea>
-
-        </p>
-
-        <p>
-            <button type="submit">Click to create new user</button>
-        </p>
-
-    </form>
-         </div>
-     </div>
-
-    <?php
-
-    echo "You are logged in with email: $email ";
-    echo "<p> <a href=\"users.php\">Click here for users</a></p>";
+                    <div class="form-group">
+                        <label for="password">Password: </label>
+                        <input id ="password" type="text" name="password" placeholder="Please type new password here">
+                    </div>
 
 
+                    <div class="form-group">
+                        <label for="screenname">Screen name or display name: </label>
+                        <input id ="screenname" type="text" name="screenname" placeholder="Please type new screen name here">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="comments">Comments: </label>
+                        <textarea id="comments" name="comments" placeholder="Please type comments here"></textarea>
 
+                    </div>
 
+                    <div class="form-group">
+                        <button type="submit">Click to create new user</button>
+                    </div>
 
+                </form>
+            </div>
+        </div>
+
+        <?php
+        echo "You are logged in with email: $email ";
+        echo "<p> <a href=\"users.php\">Click here for users</a></p>";
     } else {
 
-    echo "Hello. You are not logged in.";
-
+        // This block is true if there is no logged_in session
+        echo '
+        
+        <div class="row">
+            <div class="col-12 m-3 p-3">
+                <div class="alert alert-warning fade show" role="alert">
+                <strong>Please login! </strong> <br /><br />
+                <a href="login.php">Click here to login.</a> You will be able to use interactive features of this site. 
+                
+                </button>
+            </div>
+            </div>
+        </div>
+        
+        
+ 
+        
+        
+        
+        
+        
+        
+        ';
     }
-?>
+    ?>
     <!-- rows, columns, card, and your web app go here!!! -->
 
 </div> <!-- /container -->
