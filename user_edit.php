@@ -64,6 +64,15 @@ $_SESSION['id_to_edit'] = $id_to_edit;
                             <label for="screenname">Screen name:</label>
                             <input class="form-control" id="screenname" type="text" name="screenname" value="'. $row['screenname'] . ' ">
                             </div>
+                            
+                            <div class="form-group">
+                            <label for="comments">Comments:</label>
+                            <textarea class="form-control" id="comments" name="comments">'. $row['comments'] . '</textarea>
+                            </div>
+                            
+                            
+  
+                            
                             <div class="form-group">
                             <button type="submit">Edit this user</button>
                             </div>';
@@ -77,7 +86,7 @@ $_SESSION['id_to_edit'] = $id_to_edit;
 
         <?php
         echo "You are logged in with email: $email ";
-        echo "<p> <a href=\"users.php\">Click here for users</a></p>";
+        
     } else {
 
 
