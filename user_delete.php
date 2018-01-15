@@ -6,7 +6,7 @@ session_start();
 $logged_in = $_SESSION['logged_in'];
 
 
-if(logged_in) {
+if($logged_in) {
 
     include('database_inc.php');
 
