@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<! -- this file is named login.php -->
+<!-- this file is named login.php -->
 <html lang="en">
 <head>
     <meta charset="utf-8">
