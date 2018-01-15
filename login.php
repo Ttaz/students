@@ -21,9 +21,7 @@
 
     <!-- weird emoji CSS -->
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-
-    <!-- login css -->
-    <link rel="stylesheet" href="login.css">
+    
 
 </head>
 <body>
@@ -35,25 +33,31 @@ include('header.php');
 ?>
 
 <div class="container">
+    <div class="row my-3">
+        <div class="col-4 mx-auto">
 
-    <div class="card card-container">
-        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-        <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin" action="login_process.php" method="POST">
-            <span id="reauth-email" class="reauth-email"></span>
-            <input name="email" type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <input name = "password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="card card-container p-3">
+        <form action="login_process.php" method="POST">
+            <div class="form-group">
+                <label for="inputEmail">Email:</label>
+                <input name="email" type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword">Password:</label>
+                <input name = "password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            </div>
+
             <div id="remember" class="checkbox">
                 <label>
                     <input name="remember" type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            <button class="btn btn-primary" type="submit">Sign in</button>
         </form><!-- /form -->
-        <a href="#" class="forgot-password">
-            Forgot the password?
-        </a>
+
+    </div>
+    </div>
     </div><!-- /card-container -->
 
 
