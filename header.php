@@ -15,6 +15,6 @@
             echo '<a class="nav-item nav-link text-white" href="login.php">Login</a>';
 
         }
-        
+     ?>   
     </div>
 </nav>
