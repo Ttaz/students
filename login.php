@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- this file is named login.php -->
+<! -- this file is named login.php -->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
 
     <!-- weird emoji CSS -->
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    
+
 
 </head>
 <body>
@@ -33,6 +33,23 @@ include('header.php');
 ?>
 
 <div class="container">
+    <?php
+        if ($_SESSION['message_login_problem'] = true) {
+        echo '
+            <div class="row my-3">
+                <div class="col-12">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Oops.</strong> There was a problem logging in. Please try again.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>            
+            ';
+    }
+    ?>
+    
     <div class="row my-3">
         <div class="col-4 mx-auto">
 
@@ -58,6 +75,9 @@ include('header.php');
 
     </div>
     </div>
+
+
+
     </div><!-- /card-container -->
 
 
